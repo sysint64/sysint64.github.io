@@ -1,0 +1,316 @@
+\documentclass[]{resume-openfont}
+
+\pagestyle{fancy}
+\resetHeaderAndFooter
+
+%--------------------------------------------------------------
+% Convenience command - make it easy to fill template
+
+% Create job position command. Parameters: company, position, location, when
+\newcommand{\resumeHeading}[4]{\runsubsection{\uppercase{#1}}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine}
+
+% Create education heading. Parameters: Name, degree, location, when
+\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3 | #4}\\
+\descript{#2}\fakeNewLine}
+
+% Create project heading. Parameters: Name, link, Tech stack
+\newcommand{\projectHeading}[3]{\Project{#1}{#2}
+\descript{#3}\\}
+
+\newcommand{\projectHeadingWithDate}[4]{\Project{#1}{#2}
+\descript{#3 | #4}\\}
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
+
+% Parameters: courses
+\newcommand{\teacherAssistant}[1]{\textbf{Teacher Assistant (TA):} #1}
+
+%--------------------------------------------------------------
+\begin{document}
+
+%--------------------------------------------------------------
+%     Profile
+%--------------------------------------------------------------
+\newcommand{\yourName}{Andrew Kabylin}
+\newcommand{\yourWebsite}{andrey.kabylin.ru}
+\newcommand{\yourWebsiteLink}{https://andrey.kabylin.ru}
+\newcommand{\yourEmail}{andrey@kabylin.ru}
+\newcommand{\githubUserName}{sysint64}
+\newcommand{\linkedInUserName}{sysint64}
+
+\begin{center}
+    \Huge \scshape \latoRegular{\yourName} \\ \vspace{1pt}
+    \small \href{mailto:\yourEmail}{\underline{\yourEmail}} $|$
+    \href{https://www.linkedin.com/in/\linkedInUserName}{\underline{linkedIn/\linkedInUserName}} $|$
+    \href{https://github.com/\githubUserName}{\underline{github/\githubUserName}}
+    $|$ \href{\yourWebsiteLink}{\underline{\yourWebsite}}
+\end{center}
+
+%--------------------------------------------------------------
+%     Education
+%--------------------------------------------------------------
+\section{Education}
+% Put school first and degree second if your school is reputable
+\educationHeading{BSc. Telecommunications}{Siberian State University of Telecommunications and Information Sciences}{Novosibirsk, Russia}{Jun 2016}
+
+%% \teacherAssistant{World Wide Web Information Systems Development}
+% \courseWork{Data Structures and Algorithms; Operating Systems;  Computer Security; Software Testing; Advanced Networking; Big Data Analytics}
+\sectionsep
+
+%--------------------------------------------------------------
+%     Skills
+%--------------------------------------------------------------
+
+\section{Skills}
+\begin{skillList}
+  \singleItem{Languages:}{Russian - Native; English - B2+; Japanese - N5}
+  \\
+  \singleItem{Programming:}{Dart, Rust, C, C++, Kotlin, Java, Go}
+  \\
+  \singleItem{Paradigms:}{Object Oriented Design, Data Oriented Design, Reactive Programming, Functional Programming}
+  \\
+  \singleItem{Mobile:}{Flutter, Native Android, Firebase}
+  \\
+  \singleItem{Frontend:}{Angular, JavaScript, TypeScript, HTML/CSS}
+  \\
+  \singleItem{Backend:}{Django with Python, Java/Kotlin with Vert.X}
+  \\
+  \singleItem{Technology:}{Git, Nginx, \LaTeX, PostgreSQL}
+\end{skillList}
+
+\sectionsep
+
+%--------------------------------------------------------------
+%     Experience
+%--------------------------------------------------------------
+\section{Work Experience}
+
+\resumeHeading{Holland \& Barrett}{Mobile Application Developer}{London (Remote)}{May 2021 – Present}
+\begin{bullets}
+\item Beyond 100 was consumed by H\&B and I continued to work on a researh project;
+\item Designed custom charts widgets with complex and beautiful animation;
+\item Worked as a Mobile Lead on a new project;
+\item Designed modular architecture to make it possible to use modules in a different mobile application without rewriting an copying existings features.
+\end{bullets}
+\sectionsep
+
+\resumeHeading{LLC Beyond100}{Mobile Application Developer}{London (Remote)}{Oct 2020 – May 2021}
+\begin{bullets}
+\item Worked on research project to help people improve health. Mobile application is written on \textbf{Flutter};
+\item Improved debugging practices in a team;
+\item Designed debug services to help adjust configs, check different logs and other important information that can help localize problems.
+\item Improved existence mobile application architecture, to make applciation more rubust.
+\end{bullets}
+\sectionsep
+
+\resumeHeading{LLC The Invaders}{Software Engineer}{Novosibirsk}{Oct 2014 - Oct - 2020}
+\begin{bullets}
+\item Development of \textbf{Android} applications using \textbf{Java}, \textbf{Kotlin} or \textbf{Flutter};
+\item Development backend \textbf{REST API} for different clients using \textbf{Python}, \textbf{Django}, \textbf{Java}, \textbf{Kotlin}, \textbf{Vert.x};
+\item Configuration servers, \textbf{CI/CD} and development auto deployment scripts.
+\end{bullets}
+\sectionsep
+
+%--------------------------------------------------------------
+%     Projects
+%--------------------------------------------------------------
+\section{Projects}
+
+\projectHeading{TTM Wallet}{https://ttmbank.com/key-wallet/}{Dart, Flutter, C++, Swift, Kotlin}
+TTM Wallet cryptocurrency wallet. It's a friendly user and convenient interface to keep and manage your digital assets.\\
+\textbf{Responsibilities}: Mobile lead developer.\\
+\textbf{Web site}: \url{https://ttmbank.com/key-wallet/}\\
+\textbf{Android}: \url{https://play.google.com/store/apps/details?id=com.ttmbank.wallet.app}\\
+\textbf{iOS}: \url{https://apps.apple.com/ru/app/ttm-wallet/id1540851562}\\
+\sectionsep
+
+\projectHeading{Staffjet}{https://staffjet.ru/}{Kotlin, Native Android}
+Staffjet is HRaas-service for mass selection and hiring of personnel for non-specialized positions. (Kotlin)\\
+\textbf{Responsibilities}: Android lead developer.\\
+\textbf{Web site}: \url{https://staffjet.ru/}\\
+\textbf{Android}: \url{https://apkpure.com/ru/staffjet-\%E2\%80\%93-\%D1\%80\%D0\%B0\%D0\%B1\%D0\%BE\%D1\%82\%D0\%B0-\%D1\%83-\%D0\%B4\%D0\%BE\%D0\%BC\%D0\%B0/ru.staffjet}\\
+\sectionsep
+
+\clearpage
+
+\projectHeading{Humaniq Lite}{http://humaniq.com/}{Java, Native Android}
+Humaniq is a simple and secure mobile bank.\\
+\textbf{Responsibilities}: Senior android developer, chat core implementation.\\
+\textbf{Web site}: \url{http://humaniq.com/}\\
+\textbf{Android}: \url{https://apkpure.com/humaniq-free-secure-chat-crypto-wallet-app/com.humaniq.lite}\\
+\sectionsep
+
+\projectHeading{RussPass}{http://www.russpass.ru/}{Dart, Flutter, Firebase}
+A tour guide mobile application.\\
+\textbf{Responsibilities}: Flutter developer, core architecture.\\
+\textbf{Web site}: \url{http://www.russpass.ru/}\\
+\textbf{Android}: \url{https://play.google.com/store/apps/details?id=ru.russpass.tourist}\\
+\textbf{iOS}: \url{https://apps.apple.com/ru/app/id1510365749}\\
+\sectionsep
+
+\projectHeading{MOST}{https://most-app.com/}{Dart, Flutter, Firebase}
+Multiplatform system for on-the-go networking by Sales \& BizDev reps.\\
+\textbf{Responsibilities}: Flutter developer.\\
+\textbf{Web site}: \url{https://most-app.com/}\\
+\textbf{Android}: \url{https://play.google.com/store/apps/details?id=mostapp.pro}\\
+\textbf{iOS}: \url{https://apps.apple.com/ru/app/most-wallet/id1491001441}\\
+\sectionsep
+
+\projectHeading{RecyclerOS MVP}{https://troventum.com/}{Kotlin, Native Android}
+It is a global solution for the problems of the recycling industry\\
+\textbf{Responsibilities}: Android developer.\\
+\textbf{Web site}: \url{https://troventum.com/}\\
+Application hasn't published yet.\\
+\sectionsep
+
+\projectHeading{RecyclerOS MVP - Document encryption service}{https://troventum.com/}{Java, Vert.x}
+Implemented microservice for document encryption and storing data in ethereum blockchain.\\
+\textbf{Responsibilities}: Backend developer.\\
+\textbf{Web site}: \url{https://troventum.com/}\\
+\sectionsep
+
+\projectHeading{Money Zebra Prototype}{http://zebra.money/}{Kotlin, Vert.x, TypeScript, Angular, Python, Django, Ansible}
+Financial online auction.\\
+\textbf{Responsibilities}: Full stack developer.\\
+\textbf{Auction}: \url{https://au.zebra.money/}\\
+\textbf{Web site}: \url{http://zebra.money/}\\
+\sectionsep
+
+\projectHeading{Starateli}{https://play.google.com/store/apps/details?id=ru.starateli}{Java, Native Android}
+It is a catalog of construction materials.\\
+\textbf{Responsibilities}: Lead android developer.\\
+\textbf{Android}: \url{https://play.google.com/store/apps/details?id=ru.starateli}\\
+\sectionsep
+
+\projectHeading{Revengebet}{https://apkpure.com/nl/revengebet-sport-forecasts/com.revengebet_limited}{Java, Native Android, Python, Django}
+Android application for sport forecasts.\\
+\textbf{Responsibilities}: Full stack developer.\\
+\textbf{Android}: \url{https://apkpure.com/nl/revengebet-sport-forecasts/com.revengebet_limited}\\
+\sectionsep
+
+\projectHeading{Gorsite}{https://gorsite.ru/}{Python, Django}
+Platform for creating urban sites using multiple admin panels.\\
+\textbf{Responsibilities}: Web developer\\
+\textbf{Web site}: \url{https://gorsite.ru/}\\
+\sectionsep
+
+\projectHeading{Humaniq Prototype}{https://github.com/humaniq/humaniq-android}{Java, Native Android, Python, Django}
+Humaniq is a simple and secure mobile bank.\\
+\textbf{Responsibilities}: Full stack developer.\\
+\textbf{Android source code}: \url{https://github.com/humaniq/humaniq-android}\\
+\sectionsep
+
+% Example using bullets and dates
+% \projectHeadingWithDate{Hogwart\textquotesingle{}s Library Management System}{https://github.com/Aarif123456/hogwartslibrary}{PHP, JavaScript, HTML, CSS, MySQL}{Aug 2019}
+% \begin{bullets}
+    % \item A full-stack library management system, where users can manage books and holds on their accounts. Users can search the library\textquotesingle{}s catalogue, which has every book mentioned in the Harry Potter series. The system distinguishes between 4 users. For examples, librarians who can also check or return books on behalf of users.\\
+% \end{bullets}
+% \sectionsep
+
+%--------------------------------------------------------------
+%     Open Source project I've participated
+%--------------------------------------------------------------
+
+\clearpage
+
+\section{Open Source project I've participated}
+
+\projectHeading{Flutter}{https://github.com/flutter/flutter/pulls?q=is\%3Apr+author\%3Asysint64}{Dart}
+Flutter is Google's SDK for crafting beautiful, fast user experiences for mobile, web, and desktop from a single codebase. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source.\\
+\textbf{GitHub}: \url{https://github.com/flutter/flutter}\\
+\textbf{Pull requests}: \url{https://github.com/flutter/flutter/pulls?q=is\%3Apr+author\%3Asysint64}\\
+\sectionsep
+
+\projectHeading{Druid}{https://github.com/linebender/druid/pulls?q=is\%3Apr+author\%3Asysint64}{Rust}
+Data-first Rust-native UI toolkit.\\
+\textbf{GitHub}: \url{https://github.com/linebender/druid}\\
+\textbf{Pull requests}: \url{https://github.com/linebender/druid/pulls?q=is\%3Apr+author\%3Asysint64}\\
+\sectionsep
+
+\projectHeading{Serverless}{https://github.com/serverless/serverless/pulls?q=is\%3Apr+author\%3Asysint64}{}
+Serverless Framework.\\
+\textbf{GitHub}: \url{https://github.com/serverless/serverless/}\\
+\textbf{Pull requests}: \url{https://github.com/serverless/serverless/pulls?q=is\%3Apr+author\%3Asysint64}\\
+\sectionsep
+
+\projectHeading{intellij-dlanguage}{https://github.com/intellij-dlanguage/intellij-dlanguage/pulls?q=is\%3Apr+author\%3Asysint64}{Java, Kotlin}
+Intellij Plugin for the D Programming Language.\\
+\textbf{GitHub}: \url{https://github.com/intellij-dlanguage/intellij-dlanguage/}\\
+\textbf{Pull requests}: \url{https://github.com/intellij-dlanguage/intellij-dlanguage/pulls?q=is\%3Apr+author\%3Asysint64}\\
+\sectionsep
+
+\projectHeading{phobos}{https://github.com/dlang/phobos/pulls?q=is\%3Apr+author\%3Asysint64}{D}
+Phobos is the standard library that comes with the D Programming Language Compiler.\\
+\textbf{GitHub}: \url{https:https://github.com/dlang/phobos}\\
+\textbf{Pull requests}: \url{https://github.com/dlang/phobos/pulls?q=is\%3Apr+author\%3Asysint64}\\
+\sectionsep
+
+%--------------------------------------------------------------
+%     Personal Pet Projects
+%--------------------------------------------------------------
+
+\section{Personal Pet Projects}
+
+\projectHeading{serdes\_json}{https://github.com/sysint64/serdes\_json}{Dart}
+Dart libaray to work with json declaratively.\\
+\textbf{GitHub}: \url{https://github.com/sysint64/serdes_json}\\
+\sectionsep
+
+\projectHeading{drivers}{https://github.com/sysint64/drivers}{Dart, Flutter}
+My collection of abstractions, helpers, containers, widgets and useful functions that I use in different projects.\\
+\textbf{GitHub}: \url{https://github.com/sysint64/drivers}\\
+\sectionsep
+
+\projectHeading{obj2stl}{https://github.com/sysint64/obj2stl}{C++}
+CLI to convert 3d objects from obj format to stl.\\
+\textbf{GitHub}: \url{https://github.com/sysint64/obj2stl}\\
+\sectionsep
+
+\projectHeading{Vocabulator}{https://https://github.com/sysint64/vocabulator-android-client}{Kotlin, Native Android, Python, Django, GRPC}
+Android application for compiling a personal dictionary which can help you to improve your vocabulary in English, Japanesse or any other languages.\\
+\textbf{Android application source code}: \url{https://github.com/sysint64/vocabulator-android-client}\\
+\textbf{Server side source code}: \url{https://github.com/sysint64/vocabulator-server-side}\\
+\sectionsep
+
+\projectHeading{Ripa Archive}{https://github.com/sysint64/ripa\_archive}{Python, Django}
+Documents organizer, have interface familiar with OS file manager to manipulate folders and documents, set statuses for documents, display log activity and etc.\\
+\textbf{Souce code}: \url{https://github.com/sysint64/ripa_archive}
+\sectionsep
+
+\projectHeading{RPUI}{https://github.com/sysint64/RPUI}{D, OpenGL, GLSL}
+GUI Framework written using OpenGL.\\
+\textbf{GitHub}: \url{https://github.com/sysint64/RPUI}\\
+\sectionsep
+
+\projectHeading{E2DIT}{https://github.com/sysint64/e2dit}{C++, OpenGL, GLSL}
+Levels editor for 2D games.\\
+\textbf{GitHub}: \url{https://github.com/sysint64/e2dit}\\
+\sectionsep
+
+\projectHeading{gapi}{https://github.com/sysint64/gapi}{D, OpenGL, GLSL}
+Simple Data Oriented OpenGL GAPI.\\
+\textbf{GitHub}: \url{https://github.com/sysint64/gapi}\\
+\sectionsep
+
+\projectHeading{RPDL}{https://github.com/sysint64/RPDL}{D}
+Simple declarative language.\\
+\textbf{GitHub}: \url{https://github.com/sysint64/RPDL}\\
+\sectionsep
+
+\projectHeading{APC programming-language}{https://github.com/sysint64/programming-language-APC}{C++, LLVM}
+Programming language created just for fun.\\
+\textbf{GitHub}: \url{https://github.com/sysint64/programming-language-APC}\\
+\sectionsep
+
+\projectHeading{Fun Smile}{https://github.com/sysint64/funsmile}{Delphi, OpenGL}
+2D Platformer Game.\\
+\textbf{GitHub}: \url{https://github.com/sysint64/funsmile}\\
+\sectionsep
+
+\projectHeading{Tetris}{https://github.com/sysint64/tetris-glscene}{Delphi, OpenGL}
+Classic tetris game with additional modes.\\
+\textbf{GitHub}: \url{https://github.com/sysint64/tetris-glscene}\\
+\sectionsep
+
+\end{document}
