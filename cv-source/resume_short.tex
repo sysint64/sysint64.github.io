@@ -1,0 +1,147 @@
+\documentclass[]{resume-openfont}
+
+\pagestyle{fancy}
+\resetHeaderAndFooter
+
+%--------------------------------------------------------------
+% Convenience command - make it easy to fill template
+
+% Create job position command. Parameters: company, position, location, when
+\newcommand{\resumeHeading}[4]{\runsubsection{\uppercase{#1}}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine}
+
+% Create education heading. Parameters: Name, degree, location, when
+\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3 | #4}\\
+\descript{#2}\fakeNewLine}
+
+% Create project heading. Parameters: Name, link, Tech stack
+\newcommand{\projectHeading}[3]{\Project{#1}{#2}
+\descript{#3}\\}
+
+\newcommand{\projectHeadingWithDate}[4]{\Project{#1}{#2}
+\descript{#3 | #4}\\}
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
+
+% Parameters: courses
+\newcommand{\teacherAssistant}[1]{\textbf{Teacher Assistant (TA):} #1}
+
+%--------------------------------------------------------------
+\begin{document}
+
+%--------------------------------------------------------------
+%     Profile
+%--------------------------------------------------------------
+\newcommand{\yourName}{Andrei Kabylin}
+\newcommand{\yourWebsite}{andrey.kabylin.ru}
+\newcommand{\yourWebsiteLink}{https://andrey.kabylin.ru}
+\newcommand{\yourEmail}{sys.int64@gmail.ru}
+\newcommand{\yourTelegram}{@sys\_int64}
+\newcommand{\githubUserName}{sysint64}
+\newcommand{\linkedInUserName}{sysint64}
+
+\begin{center}
+    \Huge \scshape \latoRegular{\yourName} \\ \vspace{1pt}
+    \small \href{mailto:\yourEmail}{\underline{\yourEmail}} $|$
+    \href{https://www.linkedin.com/in/\linkedInUserName}{\underline{linkedIn/\linkedInUserName}} $|$
+    telegram/\yourTelegram $|$
+    \href{https://github.com/\githubUserName}{\underline{github/\githubUserName}} $|$
+    \href{\yourWebsiteLink}{\underline{\yourWebsite}}
+\end{center}
+
+%--------------------------------------------------------------
+%     Education
+%--------------------------------------------------------------
+\section{Education}
+% Put school first and degree second if your school is reputable
+\educationHeading{BSc. Information Technology and Telecommunication Systems}{Siberian State University of Telecommunications and Information Sciences}{Novosibirsk, Russia}{Jun 2016}
+
+%% \teacherAssistant{World Wide Web Information Systems Development}
+% \courseWork{Data Structures and Algorithms; Operating Systems;  Computer Security; Software Testing; Advanced Networking; Big Data Analytics}
+\sectionsep
+
+%--------------------------------------------------------------
+%     Skills
+%--------------------------------------------------------------
+
+\section{Skills}
+\begin{skillList}
+  \singleItem{Languages:}{Russian - Native; English - C1; Japanese - N5}
+  \\
+  \singleItem{Programming:}{Dart, Rust, C, C++, Swift, Kotlin, Java, Go}
+  \\
+  \singleItem{Paradigms:}{Object Oriented Design, Data Oriented Design, Reactive Programming, Functional Programming}
+  \\
+  \singleItem{Mobile:}{Flutter, Native Android, Swift UI, Firebase}
+  \\
+  \singleItem{Frontend:}{Angular, JavaScript, TypeScript, HTML/CSS}
+  \\
+  \singleItem{Backend:}{Django with Python, Java/Kotlin with Vert.X}
+  \\
+  \singleItem{Technology:}{Git, Nginx, \LaTeX, PostgreSQL}
+\end{skillList}
+
+\sectionsep
+
+%--------------------------------------------------------------
+%     Experience
+%--------------------------------------------------------------
+\section{Work Experience}
+
+\resumeHeading{Comikey Media Inc.}{Mobile Application Developer (Lead)}{USA (Remote)}{Jan 2023 - Present}
+\begin{bullets}
+\item Implemented new home page;
+\item Revamped authentication and made it more robust;
+\item Create transactions systems that allows to guarantee that operation will be finished even if application closed or mobile phone battery died;
+\item Applied new transactions to in app purchases to guarantee payments;
+\item Implemented guest user and applied transactions for merging guest user with regular user to guarantee data won't be lost;
+\item Completely revamped manga and webtoons reader to handle big comics and improve reliability; Added advanced vertical scrolling and proper interactive mode for reader (zoom, pan etc);
+\item Improvemente unlocking episodes logic and UI;
+\item Create debug services from where you can enable and disable feature flags; Change application config; Test deeplinks etc.;
+\item Write unit, golden, integration and widget tests;
+\item Set up CI/CD to check validity of codebase and to deploy iOS and Android applications.
+\end{bullets}
+\sectionsep
+
+\resumeHeading{Finblox}{Mobile Application Developer}{Singapore (Remote)}{May 2022 – Dec 2022}
+\begin{bullets}
+\item Implemented deep linking; coin swap feature; launchpad buy token screen; insights tabs;
+  authenticaion using QR code; p2p create order;
+\item Improved pagination;
+\item Design cancelable opeartions framework;
+\item Integrated Meld to buy crypto tokens;
+\item Updated settings page UI design;
+\item Helped to implement finpool party feature;
+\item Write unit, golden, integration and widget tests.
+\end{bullets}
+\sectionsep
+
+\clearpage
+
+\resumeHeading{Holland \& Barrett}{Mobile Application Developer}{London (Remote)}{May 2021 – Jun 2022}
+\begin{bullets}
+\item Beyond 100 was consumed by H\&B and I continued to work on a researh project;
+\item Designed custom charts widgets with complex and beautiful animation;
+\item Worked as a Mobile Lead on a new project;
+\item Designed modular architecture to make it possible to use modules in a different mobile application without rewriting an copying existings features.
+\end{bullets}
+\sectionsep
+
+\resumeHeading{LLC Beyond100}{Mobile Application Developer}{London (Remote)}{Oct 2020 – May 2021}
+\begin{bullets}
+\item Worked on research project to help people improve health. Mobile application is written on \textbf{Flutter};
+\item Improved debugging practices in a team;
+\item Designed debug services to help adjust configs, check different logs and other important information that can help localize problems.
+\item Improved existence mobile application architecture, to make applciation more rubust.
+\end{bullets}
+\sectionsep
+
+\resumeHeading{LLC The Invaders}{Software Engineer}{Novosibirsk}{Oct 2014 - Oct - 2020}
+\begin{bullets}
+\item Development of \textbf{Android} applications using \textbf{Java}, \textbf{Kotlin} or \textbf{Flutter};
+\item Development backend \textbf{REST API} for different clients using \textbf{Python}, \textbf{Django}, \textbf{Java}, \textbf{Kotlin}, \textbf{Vert.x};
+\item Configuration servers, \textbf{CI/CD} and development auto deployment scripts.
+\end{bullets}
+\sectionsep
+
+\end{document}
