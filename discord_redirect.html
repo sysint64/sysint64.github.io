@@ -73,11 +73,8 @@
 
   <script>
     (function() {
-      const APP_SCHEME = 'net.sos-dan.haruhi.8326ea95';
-      const APP_HOST = 'haruhi.sos-dan.net';
-      const APP_PATH = '/auth/sso/callback';
-
-      const appUrl = APP_SCHEME + '://' + APP_HOST + APP_PATH + window.location.search;
+      const APP_CALLBACK = 'net.sos-dan.haruhi.8326ea95://haruhi.sos-dan.net/auth/sso/callback';
+      const appUrl = APP_CALLBACK + window.location.search;
 
       document.getElementById('manualLink').href = appUrl;
 
