@@ -64,6 +64,7 @@ p { margin: 0 0 1em; }
 .intro { margin-top: 40px; }
 
 h2 {
+    scroll-margin-top: 32px;
     margin: 56px 0 12px;
     font-size: 13px;
     font-weight: 700;

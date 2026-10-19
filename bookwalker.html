@@ -19,7 +19,8 @@
         <div class="intro">
             <p>
                 BookWalker is a store and reader for officially licensed manga, light novels and audiobooks.
-                I built its iOS and Android apps from scratch and own them end to end, from the architecture to releases.
+                As lead mobile developer, I designed the architecture of its iOS and Android apps, built them from scratch
+                and took them from the first commit to their public launch.
             </p>
             <ul class="links">
                 <li><a href="https://apps.apple.com/us/app/bookwalker-manga-novels/id6738940313">App Store</a></li>
@@ -42,7 +43,9 @@
         <h2>Readers</h2>
         <p>
             The comic reader is my own engine. It handles single pages, two-page spreads and vertical webtoon scrolling,
-            and keeps the exact reading position when you switch modes or rotate the device. The same mechanism opens
+            where wide spread pages can also be scrolled horizontally inside the vertical feed
+            (<a href="lab.html#comic-reader">see the demo</a>). It keeps the exact
+            reading position when you switch modes or rotate the device. The same mechanism opens
             a comic at a precise location. Pages are DRM-protected and decrypted by native code in a pool of isolates,
             so scrolling stays smooth.
         </p>
