@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookWalker - Andrei Kabylin</title>
+    <meta name="description" content="How I built the BookWalker iOS and Android apps: reader engines, offline mode, DRM and the infrastructure around them.">
+    <link href="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/minimal.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <a class="back" href="index.html">&larr; Andrei Kabylin</a>
+
+        <h1>BookWalker</h1>
+        <p class="role">Lead mobile developer at M12-Media, 2024 - now</p>
+
+        <div class="intro">
+            <p>
+                BookWalker is a store and reader for officially licensed manga, light novels and audiobooks.
+                I built its iOS and Android apps from scratch and own them end to end, from the architecture to releases.
+            </p>
+            <ul class="links">
+                <li><a href="https://apps.apple.com/us/app/bookwalker-manga-novels/id6738940313">App Store</a></li>
+                <li><a href="https://play.google.com/store/apps/details?id=net.sos_dan.haruhi">Google Play</a></li>
+                <li><a href="https://bookwalker.com/">bookwalker.com</a></li>
+            </ul>
+        </div>
+
+        <div class="shots">
+            <a href="screenshots/bookwalker/01.webp" class="glightbox" data-gallery="bookwalker"><img src="screenshots/bookwalker/01.webp" alt="Home screen" loading="lazy"></a>
+            <a href="screenshots/bookwalker/04.webp" class="glightbox" data-gallery="bookwalker"><img src="screenshots/bookwalker/04.webp" alt="Comic reader" loading="lazy"></a>
+            <a href="screenshots/bookwalker/07.webp" class="glightbox" data-gallery="bookwalker"><img src="screenshots/bookwalker/07.webp" alt="EPUB reader settings" loading="lazy"></a>
+            <a href="screenshots/bookwalker/02.webp" class="glightbox" data-gallery="bookwalker"><img src="screenshots/bookwalker/02.webp" alt="Browse with filters" loading="lazy"></a>
+            <a href="screenshots/bookwalker/03.webp" class="glightbox" data-gallery="bookwalker"><img src="screenshots/bookwalker/03.webp" alt="Volume details" loading="lazy"></a>
+            <a href="screenshots/bookwalker/06.webp" class="glightbox" data-gallery="bookwalker"><img src="screenshots/bookwalker/06.webp" alt="Checkout with gifting and auto-buy" loading="lazy"></a>
+            <a href="screenshots/bookwalker/05.webp" class="glightbox" data-gallery="bookwalker"><img src="screenshots/bookwalker/05.webp" alt="Series page" loading="lazy"></a>
+        </div>
+        <p class="caption">Screenshots from the App Store listing.</p>
+
+        <h2>Readers</h2>
+        <p>
+            The comic reader is my own engine. It handles single pages, two-page spreads and vertical webtoon scrolling,
+            and keeps the exact reading position when you switch modes or rotate the device. The same mechanism opens
+            a comic at a precise location. Pages are DRM-protected and decrypted by native code in a pool of isolates,
+            so scrolling stays smooth.
+        </p>
+        <p>
+            Light novels run on Readium, which I integrated natively on iOS and Android and bridged to Flutter over
+            platform channels and Protobuf, with LCP DRM. Audiobooks play in the background with lock screen controls
+            and casting. All three readers are standalone packages without UI of their own, so another app can reuse
+            them with its own design.
+        </p>
+
+        <h2>Offline and reliability</h2>
+        <p>
+            Users can download their purchases and read or listen with no connection; the app even starts offline.
+            Downloads, payments, progress sync and analytics go through a persistent task orchestrator with retries
+            and backoff, so they finish even if the app is killed halfway.
+        </p>
+
+        <h2>Everything else</h2>
+        <p>
+            I also built the server-driven home screen, multi-factor sign-in with SSO and passkeys, purchases and gifting,
+            and accessibility support: text scaling, high-contrast themes and full keyboard navigation. I brought unit,
+            widget and golden tests to the team and set up the CI/CD that builds, tests and distributes the apps.
+        </p>
+
+        <h2>Stack</h2>
+        <p>Flutter, Dart, Swift, Kotlin, Readium, Protobuf, SQLite (Drift), Fastlane.</p>
+
+        <footer>
+            <a href="mailto:sys.int64@gmail.com">sys.int64@gmail.com</a>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/js/glightbox.min.js"></script>
+    <script>GLightbox({ selector: '.glightbox' });</script>
+</body>
+</html>

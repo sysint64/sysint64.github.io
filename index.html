@@ -3,365 +3,89 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrei Kabylin - Software Engineer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <title>Andrei Kabylin</title>
+    <meta name="description" content="Andrei Kabylin, lead mobile engineer. Flutter, Swift, Kotlin.">
+    <link href="assets/minimal.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 font-sans">
-    <div class="container mx-auto px-24 py-8">
-        <header class="text-center mb-8">
-            <h1 class="text-4xl font-bold text-gray-800 mb-2">Andrei Kabylin</h1>
-            <p class="text-xl text-gray-600">Passionate Software Engineer</p>
-        </header>
+<body>
+    <main>
+        <h1>Andrei Kabylin</h1>
+        <p class="role">Lead mobile engineer</p>
 
-        <nav class="mb-8">
-            <ul class="flex flex-wrap justify-center space-x-4">
-                <li><a href="#about" class="text-red-700 hover:text-red-600">About</a></li>
-                <li><a href="#services" class="text-red-700 hover:text-red-600">Services</a></li>
-                <li><a href="#stack" class="text-red-700 hover:text-red-600">Tech Stack</a></li>
-                <li><a href="#projects" class="text-red-700 hover:text-red-600">Projects</a></li>
-                <li><a href="#publications" class="text-red-700 hover:text-red-600">Publications</a></li>
-                <li><a href="#open-source" class="text-red-700 hover:text-red-600">Open Source</a></li>
-                <li><a href="#contact" class="text-red-700 hover:text-red-600">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="intro">
+            <p>
+                I've been building iOS and Android apps for over a decade, mostly in Flutter, with Swift and Kotlin
+                where native code matters. Most recently I built <a href="bookwalker.html">BookWalker</a> from scratch:
+                a manga, light novel and audiobook app with its own comic reader engine, an EPUB reader on native Readium,
+                offline mode and DRM, packaged as modules other apps can reuse.
+            </p>
+            <p>
+                Before that I led mobile at <a href="comikey.html">Comikey</a>, rebuilding its reader and making purchases
+                reliable, and worked on apps for <a href="finblox.html">Finblox</a>, <a href="ivie.html">Holland &amp; Barrett</a>
+                and <a href="ttm-wallet.html">TTM Wallet</a>. I care about architecture and tests as much as features,
+                and contribute to <a href="https://github.com/flutter/flutter/pulls?q=is%3Apr+author%3Asysint64">Flutter</a>
+                and other open-source projects.
+            </p>
+        </div>
 
-        <main>
-            <section id="about" class="bg-white shadow-md rounded-lg p-6 mb-8">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">About Me</h2>
-                <p class="text-gray-600">I'm a passionate Software Engineer with a lifelong love for programming. What began as a childhood hobby has evolved into a fulfilling career.</p>
-            </section>
+        <h2>Work</h2>
+        <ul class="work">
+            <li><a href="bookwalker.html">BookWalker</a><span>Lead, 2024 - now</span></li>
+            <li><a href="comikey.html">Comikey</a><span>Lead, 2023 - 2024</span></li>
+            <li><a href="finblox.html">Finblox</a><span>2022</span></li>
+            <li><a href="ivie.html">Ivie, Holland &amp; Barrett</a><span>2021 - 2022</span></li>
+            <li><a href="ttm-wallet.html">TTM Wallet</a><span>Lead</span></li>
+        </ul>
 
-            <section id="stack" class="bg-gray-200 shadow-md rounded-lg p-6 mb-8">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Tech Stack</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Mobile</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Flutter</li>
-                            <li>Native Android (Java, Kotlin, Jetpack Compose)</li>
-                            <li>Native iOS (Swift, SwiftUI)</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Backend</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Python with Django</li>
-                            <li>Rust with Axum</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Web</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>JavaScript</li>
-                            <li>TypeScript</li>
-                            <li>HTML5</li>
-                            <li>CSS/SASS</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Systems Programming</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>C/C++</li>
-                            <li>Rust</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Graphics Programming</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>OpenGL</li>
-                            <li>WebGPU</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+        <h2>Lab</h2>
+        <div class="teaser">
+            <p>
+                In my own time I build tools and libraries for my personal projects, and explore ideas I'm curious about.
+                When a design needs something no package can deliver, I build it myself: this chart is drawn from scratch
+                with math and Canvas. <a href="lab.html">More demos</a>, including a cross-platform docking system with
+                a shared Rust core.
+            </p>
+            <video class="video portrait" src="media/chart-transitions.mp4" poster="media/chart-transitions.webp" controls muted loop playsinline preload="none"></video>
+        </div>
 
-            <section id="services" class="bg-white shadow-md rounded-lg p-6 mb-8">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Services</h2>
+        <h2>Open source</h2>
+        <ul class="work">
+            <li><a href="https://github.com/sysint64/limur">limur</a><span>Composable UI framework for Rust, in early development</span></li>
+            <li><a href="https://github.com/sysint64/raii">raii</a><span>Resource lifecycle management for Flutter</span></li>
+            <li><a href="https://github.com/tech-paws/tech_paws_buffers_generator">Tech Paws Buffers</a><span>Binary protocol replacing FFI and JNI for Rust interop</span></li>
+            <li><a href="https://github.com/sysint64/RPUI">RPUI</a><span>GUI framework on OpenGL, written in D</span></li>
+            <li><a href="https://github.com/sysint64/obj2stl">obj2stl</a><span>OBJ to STL converter with tests and benchmarks, in C++</span></li>
+            <li><a href="https://pub.dev/publishers/andrei.kabylin.dev/packages">pub.dev</a><span>Published Flutter packages</span></li>
+        </ul>
+        <p style="margin-top: 16px;">
+            Pull requests to <a href="https://github.com/flutter/flutter/pulls?q=is%3Apr+author%3Asysint64">Flutter</a>,
+            <a href="https://github.com/flutter/packages/issues?q=is%3Apr%20author%3Asysint64%20">Flutter Packages</a>,
+            <a href="https://github.com/flutter/website/pulls?q=is%3Apr+author%3Asysint64">the Flutter website</a>,
+            <a href="https://github.com/FlutterGen/flutter_gen/pulls?q=is%3Apr+author%3Asysint64">flutter_gen</a>,
+            <a href="https://github.com/linebender/druid/pulls?q=is%3Apr+author%3Asysint64">Druid</a>,
+            <a href="https://github.com/dlang/phobos/pulls?q=is%3Apr+author%3Asysint64">Phobos</a>,
+            <a href="https://github.com/intellij-dlanguage/intellij-dlanguage/pulls?q=is%3Apr+author%3Asysint64">the IntelliJ D plugin</a>
+            and <a href="https://github.com/serverless/serverless/pulls?q=is%3Apr+author%3Asysint64">Serverless</a>.
+        </p>
 
-                <!-- <div class="space-y-6"> -->
-                <!--     <div> -->
-                <!--         <h3 class="text-xl font-semibold text-gray-700 mb-2">Mobile Application Development</h3> -->
-                <!--         <ul class="list-disc list-inside text-gray-600"> -->
-                <!--             <li>Expert in developing and maintaining cross-platform iOS and Android applications using Dart programming language and Flutter framework, with advanced knowledge of Rust or C integration for high-performance computing tasks.</li> -->
-                <!--             <li>Specialized in native iOS application development with Swift programming language and SwiftUI framework, leveraging Rust or C for performance-critical components.</li> -->
-                <!--             <li>Proficient in native Android application development using Kotlin programming language with Jetpack Compose UI framework, complemented by Rust or C implementations for high-performance operations.</li> -->
-                <!--         </ul> -->
-                <!--     </div> -->
+        <h2>Writing</h2>
+        <ul class="work">
+            <li><a href="https://itnext.io/flutter-raii-simplifying-resource-management-in-your-apps-8d7cc5e46f8b">Flutter RAII: Simplifying Resource Management in Your Apps</a><span>ITNEXT</span></li>
+        </ul>
 
-                <!--     <div> -->
-                <!--         <h3 class="text-xl font-semibold text-gray-700 mb-2">Advanced UI and Graphics Development</h3> -->
-                <!--         <ul class="list-disc list-inside text-gray-600"> -->
-                <!--             <li>Specialized in designing and implementing complex UI components for mobile applications, from simple widgets to sophisticated interfaces with advanced mathematical calculations and animations (demonstrated in projects like comic book readers and data visualization tools).</li> -->
-                <!--             <li>Expert in high-performance graphics programming using Rust with the low-level wgpu graphics library, creating direct interfaces with Vulkan (Android) and Metal (iOS) APIs. Skilled at integrating these graphics modules into Flutter/Dart applications or native solutions like Kotlin/Jetpack Compose and Swift/SwiftUI.</li> -->
-                <!--             <li>Proficient in developing media-focused mobile applications with sophisticated audio and video processing capabilities using Flutter.</li> -->
-                <!--         </ul> -->
-                <!--     </div> -->
+        <h2>Elsewhere</h2>
+        <ul class="links">
+            <li><a href="mailto:sys.int64@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/sysint64/">LinkedIn</a></li>
+            <li><a href="https://github.com/sysint64">GitHub</a></li>
+            <li><a href="lab.html">Lab</a></li>
+            <li><a href="/cv.pdf">CV</a></li>
+        </ul>
 
-                <!--     <div> -->
-                <!--         <h3 class="text-xl font-semibold text-gray-700 mb-2">Testing and Deployment Excellence</h3> -->
-                <!--         <ul class="list-disc list-inside text-gray-600"> -->
-                <!--             <li>Expert in implementing robust testing methodologies for mobile applications, with extensive experience in unit testing, integration testing, widget testing (Flutter), and visual regression testing through golden tests.</li> -->
-                <!--             <li>Advanced knowledge of CI/CD pipelines using GitHub Actions and Gitea Actions, specializing in automated error detection, test automation, guideline compliance verification, and seamless distribution to testers via Firebase Distribute (cross-platform) and TestFlight (iOS).</li> -->
-                <!--         </ul> -->
-                <!--     </div> -->
+        <footer>Telegram <a href="https://t.me/flooty">@flooty</a></footer>
+    </main>
 
-                <!--     <div> -->
-                <!--         <h3 class="text-xl font-semibold text-gray-700 mb-2">Backend Engineering</h3> -->
-                <!--         <ul class="list-disc list-inside text-gray-600"> -->
-                <!--             <li>Proficient in designing and implementing robust backend systems using Python 3 with Django framework and PostgreSQL databases, with demonstrated expertise across multiple production systems.</li> -->
-                <!--             <li>Specialized knowledge in developing high-performance, low-latency microservices using Rust with the Axum framework, optimized for resource efficiency and scalability.</li> -->
-                <!--         </ul> -->
-                <!--     </div> -->
-
-                <!--     <div> -->
-                <!--         <h3 class="text-xl font-semibold text-gray-700 mb-2">Specialized Technical Skills</h3> -->
-                <!--         <ul class="list-disc list-inside text-gray-600"> -->
-                <!--             <li>Expert in creating comprehensive, well-structured English documentation for complex codebases, ensuring knowledge transfer and maintainability.</li> -->
-                <!--             <li>Advanced expertise in designing and implementing Domain-Specific Languages (DSLs), drawing on deep knowledge of compiler construction and language design principles.</li> -->
-                <!--         </ul> -->
-                <!--     </div> -->
-                <!-- </div> -->
-
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Mobile Application Development</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Development from scratch and maintenance of cross-platform iOS and Android applications using Dart programming language and Flutter framework, with the option to incorporate Rust or C for high-performance computing.</li>
-                            <li>Development from scratch and maintenance of native iOS applications using Swift programming language with SwiftUI framework, with the option to incorporate Rust or C for high-performance computing.</li>
-                            <li>Development from scratch and maintenance of native Android applications using Kotlin programming language with Jetpack Compose UI framework, with the option to incorporate Rust or C for high-performance computing.</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Specialized UI Development</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Creation of custom UI components of any complexity for your mobile application, ranging from simple widgets to complex components with sophisticated mathematical calculations and animations (e.g., comic book readers or intricate animated graphs).</li>
-                            <li>Development of high-performance graphics applications or UI components, such as 3D graphics applications. The graphics core will be written in Rust using the low-level wgpu graphics library, which works directly with graphics APIs – Vulkan on Android and Metal on iOS. The graphics module can be integrated into applications built with Flutter/Dart or native solutions (Kotlin/Jetpack Compose for Android or Swift/SwiftUI for iOS).</li>
-                            <li>Development of mobile applications for media processing (audio or video) using Flutter.</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Quality Assurance</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Implementation of comprehensive testing solutions for mobile applications, including unit tests, integration tests, widget tests (Flutter only), and golden tests (Flutter only).</li>
-                            <li>Complete CI/CD setup (GitHub Actions or Gitea Actions) for automatic error checking, automated testing, guideline compliance verification, and automated building and distribution to testers. Distribution platforms include Firebase Distribute (iOS and Android) and TestFlight (iOS only).</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Backend Development</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Development of backend systems using Python 3 and Django framework with PostgreSQL database.</li>
-                            <li>Development of high-performance microservices using Rust and Axum framework.</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Additional Services</h3>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Creation of comprehensive English documentation for developed code.</li>
-                            <li>Development of Domain-Specific Languages (DSLs).</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="projects" class="bg-white shadow-md rounded-lg p-6 mb-8">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Projects</h2>
-                <div class="space-y-6 mb-8">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Professional Projects</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="border p-4 rounded-lg">
-                            <h4 class="text-lg font-semibold text-gray-800">BookWalker</h4>
-                            <p class="text-gray-600">Platform to read manga and light novels and listen to audiobooks. <strong>(Flutter, Dart, Swift, Kotlin)</strong></p>
-                            <p class="text-gray-600"><strong>Role:</strong> Lead Mobile Developer</p>
-                            <p class="text-gray-600">
-                                <strong>Links:</strong>
-                                <a href="https://bookwalker.com/" target="_blank" class="text-blue-600 hover:text-blue-800">Website</a>,
-                                <a href="https://play.google.com/store/apps/details?id=net.sos_dan.haruhi" target="_blank" class="text-blue-600 hover:text-blue-800">Android</a>,
-                                <a href="https://apps.apple.com/us/app/bookwalker-manga-novels/id6738940313" target="_blank" class="text-blue-600 hover:text-blue-800">iOS</a>
-                            </p>
-                        </div>
-                        <div class="border p-4 rounded-lg">
-                            <h4 class="text-lg font-semibold text-gray-800">Comikey</h4>
-                            <p class="text-gray-600">Platform to read Manga, Manhua, Manhwa, and Webtoons. <strong>(Flutter, Dart)</strong></p>
-                            <p class="text-gray-600"><strong>Role:</strong> Senior Flutter Developer (Lead)</p>
-                            <p class="text-gray-600">
-                                <strong>Links:</strong>
-                                <a href="https://comikey.com/" target="_blank" class="text-blue-600 hover:text-blue-800">Website</a>,
-                                <a href="https://play.google.com/store/apps/details?id=com.comikey.banagher" target="_blank" class="text-blue-600 hover:text-blue-800">Android</a>,
-                                <a href="https://apps.apple.com/us/app/comikey-manga-webtoons/id1601348237" target="_blank" class="text-blue-600 hover:text-blue-800">iOS</a>
-                            </p>
-                        </div>
-                        <div class="border p-4 rounded-lg">
-                            <h4 class="text-lg font-semibold text-gray-800">Finblox</h4>
-                            <p class="text-gray-600">Cryptocurrency platform. <strong>(Flutter, Dart)</strong></p>
-                            <p class="text-gray-600"><strong>Role:</strong> Senior Mobile Developer</p>
-                            <p class="text-gray-600">
-                                <strong>Links:</strong>
-                                <a href="https://finblox.com/" target="_blank" class="text-blue-600 hover:text-blue-800">Website</a>,
-                                <a href="https://play.google.com/store/apps/details?id=com.finbloxapp.finblox" target="_blank" class="text-blue-600 hover:text-blue-800">Android</a>,
-                                <a href="https://apps.apple.com/us/app/finblox-earn-crypto-yield/id1579461536" target="_blank" class="text-blue-600 hover:text-blue-800">iOS</a>
-                            </p>
-                        </div>
-                        <div class="border p-4 rounded-lg">
-                            <h4 class="text-lg font-semibold text-gray-800">Ivie</h4>
-                            <p class="text-gray-600">Personalised wellness. <strong>(Flutter, Dart)</strong></p>
-                            <p class="text-gray-600"><strong>Role:</strong> Senior Mobile Developer</p>
-                            <p class="text-gray-600">
-                                <strong>Links:</strong>
-                                <a href="https://iviewellness.co/" target="_blank" class="text-blue-600 hover:text-blue-800">Website</a>,
-                                <a href="https://play.google.com/store/apps/details?id=com.hollandandbarrett.ivie" target="_blank" class="text-blue-600 hover:text-blue-800">Android App</a>,
-                                <a href="https://apps.apple.com/us/app/ivie-wellness/id6444106117" target="_blank" class="text-blue-600 hover:text-blue-800">iOS App</a>
-                            </p>
-                        </div>
-                        <div class="border p-4 rounded-lg">
-                            <h4 class="text-lg font-semibold text-gray-800">H&B&Me</h4>
-                            <p class="text-gray-600">Personalised wellness. <strong>(Flutter, Dart)</strong></p>
-                            <p class="text-gray-600"><strong>Role:</strong> Senior Mobile Developer</p>
-                            <p class="text-gray-600">
-                                <strong>Links:</strong>
-                                <a href="https://apkpure.com/h-b-me/com.beyond100.mobile.android" target="_blank" class="text-blue-600 hover:text-blue-800">Android App</a>
-                            </p>
-                        </div>
-                        <div class="border p-4 rounded-lg">
-                            <h4 class="text-lg font-semibold text-gray-800">MDAO Wallet (Previous TTM Wallet)</h4>
-                            <p class="text-gray-600">Cryptocurrency wallet with a user-friendly interface to manage digital assets. <strong>(Flutter, Dart)</strong></p>
-                            <p class="text-gray-600"><strong>Role:</strong> Senior Mobile Developer (Lead)</p>
-                            <p class="text-gray-600">
-                                <strong>Links:</strong>
-                                <a href="https://play.google.com/store/apps/details?id=com.ttmbank.wallet.app" target="_blank" class="text-blue-600 hover:text-blue-800">Android App</a>,
-                                <a href="https://apps.apple.com/ru/app/ttm-wallet/id1540851562" target="_blank" class="text-blue-600 hover:text-blue-800">iOS App</a>
-                            </p>
-                        </div>
-                        <div class="border p-4 rounded-lg" >
-                            <h4 class="text-lg font-semibold text-gray-800">Staffjet</h4>
-                            <p class="text-gray-600">HRaas-service for mass selection and hiring of personnel for non-specialized positions. <strong>(Kotlin, Native Android)</strong></p>
-                            <p class="text-gray-600"><strong>Role:</strong> Android Developer</p>
-                            <p class="text-gray-600">
-                                <strong>Links:</strong>
-                                <a href="https://staffjet.ru/" target="_blank" class="text-blue-600 hover:text-blue-800">Website</a>,
-                                <a href="https://apkpure.com/ru/staffjet-%E2%80%93-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%83-%D0%B4%D0%BE%D0%BC%D0%B0/ru.staffjet" target="_blank" class="text-blue-600 hover:text-blue-800">Android App</a>
-                            </p>
-                        </div>
-                        <div class="border p-4 rounded-lg" >
-                            <h4 class="text-lg font-semibold text-gray-800">Humaniq Lite</h4>
-                            <p class="text-gray-600">Simple and secure mobile bank. <strong>(Java, Native Android)</strong></p>
-                            <p class="text-gray-600"><strong>Role:</strong> Android Developer</p>
-                            <p class="text-gray-600">
-                                <strong>Links:</strong>
-                                <a href="http://humaniq.com/" target="_blank" class="text-blue-600 hover:text-blue-800">Website</a>,
-                                <a href="https://apkpure.com/humaniq-free-secure-chat-crypto-wallet-app/com.humaniq.lite" target="_blank" class="text-blue-600 hover:text-blue-800">Android App</a>
-                            </p>
-                        </div>
-                        <div class="border p-4 rounded-lg" >
-                            <h4 class="text-lg font-semibold text-gray-800">RussPass</h4>
-                            <p class="text-gray-600">A tour guide mobile application. <strong>(Java, Native Android)</strong></p>
-                            <p class="text-gray-600"><strong>Role:</strong> Flutter Developer</p>
-                            <p class="text-gray-600">
-                                <strong>Links:</strong>
-                                <a href="http://www.russpass.ru/" target="_blank" class="text-blue-600 hover:text-blue-800">Website</a>,
-                                <a href="https://play.google.com/store/apps/details?id=ru.russpass.tourist" target="_blank" class="text-blue-600 hover:text-blue-800">Android App</a>,
-                                <a href="https://apps.apple.com/ru/app/id1510365749" target="_blank" class="text-blue-600 hover:text-blue-800">iOS App</a>
-                            </p>
-                        </div>
-                        <div class="border p-4 rounded-lg" >
-                            <h4 class="text-lg font-semibold text-gray-800">MOST</h4>
-                            <p class="text-gray-600">Multiplatform system for on-the-go networking by Sales & BizDev reps. <strong>(Dart, Flutter)</strong></p>
-                            <p class="text-gray-600"><strong>Role:</strong> Flutter Developer</p>
-                            <p class="text-gray-600">
-                                <strong>Links:</strong>
-                                <a href="https://most-app.com/" target="_blank" class="text-blue-600 hover:text-blue-800">Website</a>,
-                                <a href="https://play.google.com/store/apps/details?id=mostapp.pro" target="_blank" class="text-blue-600 hover:text-blue-800">Android App</a>,
-                                <a href="https://apps.apple.com/ru/app/most-wallet/id1491001441" target="_blank" class="text-blue-600 hover:text-blue-800">iOS App</a>
-                            </p>
-                        </div>
-                        <div class="border p-4 rounded-lg" >
-                            <h4 class="text-lg font-semibold text-gray-800">Starateli</h4>
-                            <p class="text-gray-600">Catalog of construction materials. <strong>(Java, Native Android)</strong></p>
-                            <p class="text-gray-600"><strong>Role:</strong> Android Developer</p>
-                            <p class="text-gray-600">
-                                <strong>Links:</strong>
-                                <a href="https://play.google.com/store/apps/details?id=ru.starateli" target="_blank" class="text-blue-600 hover:text-blue-800">Android App</a>
-                            </p>
-                        </div>
-                        <div class="border p-4 rounded-lg" >
-                            <h4 class="text-lg font-semibold text-gray-800">Revengebet</h4>
-                            <p class="text-gray-600">Android application for sport forecasts. <strong>(Java, Native Android, Python, Django)</strong></p>
-                            <p class="text-gray-600"><strong>Role:</strong> Full Stack Developer</p>
-                            <p class="text-gray-600">
-                                <strong>Links:</strong>
-                                <a href="https://apkpure.com/nl/revengebet-sport-forecasts/com.revengebet_limited" target="_blank" class="text-blue-600 hover:text-blue-800">Android App</a>
-                            </p>
-                        </div>
-                        <div class="border p-4 rounded-lg">
-                            <h4 class="text-lg font-semibold text-gray-800">Gorsite</h4>
-                            <p class="text-gray-600">Platform for creating urban sites using multiple admin panels. <strong>(Python, Django)</strong></p>
-                            <p class="text-gray-600"><strong>Role:</strong> Web Developer</p>
-                            <p class="text-gray-600">
-                                <strong>Links:</strong>
-                                <a href="https://gorsite.ru/" target="_blank" class="text-blue-600 hover:text-blue-800">Website</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Personal Pet Projects</h3>
-                    <ul class="list-disc list-inside text-gray-600">
-                        <li><a href="https://github.com/sysint64/raii" target="_blank" class="text-blue-600 hover:text-blue-800">RAII For Flutter</a> - Resource Acquisition Is Initialization (RAII) pattern for Dart, providing automated lifecycle management of resources. <strong>(Dart, flutter)</strong></li>
-                        <li><a href="https://github.com/tech-paws/tech_paws_buffers_generator" target="_blank" class="text-blue-600 hover:text-blue-800">Tech Paws Buffers Generator</a> - a protocol similar to gRPC but designed to replace FFI <strong>(Rust)</strong></li>
-                        <li><a href="https://github.com/sysint64/serdes_json" target="_blank" class="text-blue-600 hover:text-blue-800">serdes_json</a> - Playground for code generation - dart library to work with JSON declaratively <strong>(Dart)</strong></li>
-                        <li><a href="https://github.com/sysint64/drivers" target="_blank" class="text-blue-600 hover:text-blue-800">drivers</a> - Collection of abstractions, helpers, containers, widgets, and useful functions <strong>(Dart, Flutter)</strong></li>
-                        <li><a href="https://github.com/sysint64/obj2stl" target="_blank" class="text-blue-600 hover:text-blue-800">obj2stl</a> - CLI to convert 3D objects from OBJ format to STL <strong>(C++)</strong></li>
-                        <li><a href="https://github.com/sysint64/vocabulator-android-client" target="_blank" class="text-blue-600 hover:text-blue-800">Vocabulator Android</a> - Android application for compiling a personal dictionary <strong>(Kotlin, GRPC)</strong></li>
-                        <li><a href="https://github.com/sysint64/vocabulator-server-side" target="_blank" class="text-blue-600 hover:text-blue-800">Vocabulator Backend</a> <strong>(Python, Django, GRPC)</strong></li>
-                        <li><a href="https://github.com/sysint64/ripa_archive" target="_blank" class="text-blue-600 hover:text-blue-800">Ripa Archive</a> - Documents organizer with an OS file manager-like interface <strong>(Python, Django)</strong></li>
-                        <li><a href="https://github.com/sysint64/RPUI" target="_blank" class="text-blue-600 hover:text-blue-800">RPUI</a> - GUI Framework written using OpenGL <strong>(D)</strong></li>
-                        <li><a href="https://github.com/sysint64/e2dit" target="_blank" class="text-blue-600 hover:text-blue-800">E2DIT</a> - 2D Map Editor <strong>(C++)</strong></li>
-                        <li><a href="https://github.com/sysint64/RPDL" target="_blank" class="text-blue-600 hover:text-blue-800">RPDL</a> - Simple declarative language <strong>(D)</strong></li>
-                        <li><a href="https://github.com/sysint64/programming-language-APC" target="_blank" class="text-blue-600 hover:text-blue-800">APC programming-language</a> <strong>(C++)</strong></li>
-                        <li><a href="https://github.com/sysint64/tetris-glscene" target="_blank" class="text-blue-600 hover:text-blue-800">Tetris</a> - classic tetris game with additional modes <b>(Delphi)</b></li>
-                        <li><a href="https://github.com/sysint64/funsmile" target="_blank" class="text-blue-600 hover:text-blue-800">Fun Smile</a> - 2D Platformer Game <b>(Delphi)</b></li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="open-source" class="bg-white shadow-md rounded-lg p-6 mb-8">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Open Source</h2>
-                <ul class="space-y-2">
-                    <li><a href="https://github.com/intellij-dlanguage/intellij-dlanguage/" target="_blank" class="text-blue-600 hover:text-blue-800">Intellij Plugin for the D Programming Language</a> (<a href="https://github.com/intellij-dlanguage/intellij-dlanguage/pulls?q=is%3Apr+author%3Asysint64" target="_blank" class="text-red-700 hover:text-red-600">Pull requests</a>)</li>
-                    <li><a href="https://github.com/linebender/druid" target="_blank" class="text-blue-600 hover:text-blue-800">Druid - A data-first Rust-native UI toolkit</a> (<a href="https://github.com/linebender/druid/pulls?q=is%3Apr+author%3Asysint64" target="_blank" class="text-red-700 hover:text-red-600">Pull requests</a>)</li>
-                    <li><a href="https://github.com/flutter/flutter" target="_blank" class="text-blue-600 hover:text-blue-800">Flutter</a> (<a href="https://github.com/flutter/flutter/pulls?q=is%3Apr+author%3Asysint64" target="_blank" class="text-red-700 hover:text-red-600">Pull requests</a>)</li>
-                    <li><a href="https://github.com/flutter/packages" target="_blank" class="text-blue-600 hover:text-blue-800">Flutter Packages</a> (<a href="https://github.com/flutter/packages/issues?q=is%3Apr%20author%3Asysint64%20" target="_blank" class="text-red-700 hover:text-red-600">Pull requests</a>)</li>
-                    <li><a href="https://github.com/flutter/website" target="_blank" class="text-blue-600 hover:text-blue-800">Flutter Website</a> (<a href="https://github.com/flutter/website/pulls?q=is%3Apr+author%3Asysint64" target="_blank" class="text-red-700 hover:text-red-600">Pull requests</a>)</li>
-                    <li><a href="https://github.com/FlutterGen/flutter_gen" target="_blank" class="text-blue-600 hover:text-blue-800">flutter_gen package</a> (<a href="https://github.com/FlutterGen/flutter_gen/pulls?q=is%3Apr+author%3Asysint64" target="_blank" class="text-red-700 hover:text-red-600">Pull requests</a>)</li>
-                    <li><a href="https://github.com/serverless/serverless/" target="_blank" class="text-blue-600 hover:text-blue-800">Serverless Framework</a> (<a href="https://github.com/serverless/serverless/pulls?q=is%3Apr+author%3Asysint64" target="_blank" class="text-red-700 hover:text-red-600">Pull requests</a>)</li>
-                    <li><a href="https://github.com/dlang/phobos" target="_blank" class="text-blue-600 hover:text-blue-800">Phobos (D language standard library)</a> (<a href="https://github.com/dlang/phobos/pulls?q=is%3Apr+author%3Asysint64" target="_blank" class="text-red-700 hover:text-red-600">Pull requests</a>)</li>
-                </ul>
-            </section>
-
-            <section id="publications" class="bg-white shadow-md rounded-lg p-6 mb-8">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Publications</h2>
-                <ul class="space-y-2">
-                    <li><a href="https://itnext.io/flutter-raii-simplifying-resource-management-in-your-apps-8d7cc5e46f8b" target="_blank" class="text-blue-600 hover:text-blue-800">Flutter RAII: Simplifying Resource Management in Your Apps</a></li>
-                </ul>
-            </section>
-
-            <section id="contact" class="bg-white shadow-md rounded-lg p-6 mb-8">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Contact</h2>
-                <ul class="space-y-2">
-                    <li><a href="/cv.pdf" target="_blank" class="text-blue-600 hover:text-blue-800">CV</a></li>
-                    <li><a href="https://github.com/sysint64" target="_blank" class="text-blue-600 hover:text-blue-800">GitHub</a></li>
-                    <li><a href="mailto:sys.int64@gmail.com" class="text-blue-600 hover:text-blue-800">Email</a></li>
-                    <li><a href="https://www.linkedin.com/in/sysint64/" target="_blank" class="text-blue-600 hover:text-blue-800">LinkedIn</a></li>
-                    <li><span class="text-gray-600">Telegram: @sys_int64</span></li>
-                    <li><a href="https://pub.dev/publishers/andrei.kabylin.dev/packages" target="_blank" class="text-blue-600 hover:text-blue-800">Flutter Packages</a></li>
-                </ul>
-            </section>
-        </main>
-    </div>
+    <script src="assets/autoplay.js"></script>
 </body>
 </html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab - Andrei Kabylin</title>
+    <meta name="description" content="Short demos of side projects and experiments by Andrei Kabylin.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.2/styles/github-dark-dimmed.min.css" rel="stylesheet">
+    <link href="assets/minimal.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <a class="back" href="index.html">&larr; Andrei Kabylin</a>
+
+        <h1>Lab</h1>
+        <p class="role">Short demos of side projects and experiments</p>
+
+        <h2>Custom Flutter widgets</h2>
+        <p>
+            A chart and a date picker for a currency trends app, built from scratch because no existing package
+            could match the design's exact look and feel. Both are open source.
+        </p>
+
+        <div class="thread">
+            <article class="post">
+                <time datetime="2024-08-19">Aug 19, 2024</time>
+                <p>
+                    A trend chart drawn with plain math and Canvas, no chart packages, with animated transitions
+                    between time ranges and currency pairs.
+                    <a href="https://github.com/sysint64/Fujitsu-Launchpad-Home-Task/tree/main/lib/features/trend_chart">Source</a>.
+                </p>
+                <video class="video portrait" src="media/chart-transitions.mp4" poster="media/chart-transitions.webp" muted loop playsinline preload="metadata"></video>
+            </article>
+
+            <article class="post">
+                <time datetime="2024-08-19">Aug 19, 2024</time>
+                <p>
+                    A date picker in the spirit of the Cupertino wheel, with its own scroll math and haptic feedback
+                    on every tick. <a href="https://github.com/sysint64/Fujitsu-Launchpad-Home-Task/blob/main/lib/widgets/fujitsu_vertical_carousel_widget.dart">Wheel source</a>,
+                    <a href="https://github.com/sysint64/Fujitsu-Launchpad-Home-Task/tree/main/lib/features/time_range_custom_range_sheet">date range sheet</a>.
+                </p>
+                <video class="video portrait" src="media/date-picker.mp4" poster="media/date-picker.webp" muted loop playsinline preload="metadata"></video>
+            </article>
+        </div>
+
+        <h2>Cross-platform docking</h2>
+        <p>
+            A docking system where all the layout math lives in a shared Rust core and the UI is fully native:
+            SwiftUI on Apple platforms and Jetpack Compose on Android. The native UIs talk to the core through
+            Tech Paws Buffers, a binary protocol I designed in place of hand-written FFI and JNI bindings. It's inspired
+            by gRPC, but built for in-process calls fast enough for 120 fps interaction rather than networking: a schema
+            language, a code generator and a runtime that carries calls between Rust and Swift, Kotlin or Dart.
+            The <a href="https://github.com/tech-paws/tech_paws_buffers_generator">code generator</a> is open source;
+            the runtime isn't yet. These clips show the macOS build.
+        </p>
+
+        <details class="code">
+            <summary>Show the docking schema</summary>
+            <p class="caption">
+                The interface between the Rust core and the native UIs, written in the Tech Paws Buffers schema language.
+                The generator turns it into Rust, Swift and Kotlin code. Functions are calls into the core; signals are
+                observable values the core publishes, which SwiftUI and Compose views subscribe to and re-render from.
+            </p>
+            <pre><code class="language-rust">#[rust(use = "tech_paws_graphics::EdgeInsets")]
+#[rust(use = "crate::docking::*")]
+
+#[kotlin(package = "com.tech_paws.buffers_generated.ui")]
+#[kotlin(import = "com.tech_paws.buffers_generated.EdgeInsets")]
+
+struct DockingCalculatedArea {
+    id: u64,
+    x: f64,
+    y: f64,
+    width: f64,
+    height: DockingWindowCalculatedHeight,
+    side: DockingSide,
+    is_max_sized: bool,
+    is_float: bool,
+    has_shrunk: bool,
+    snap_x_enabled: bool,
+    snap_y_enabled: bool,
+    show_left_resize: bool,
+    show_right_resize: bool,
+    show_top_resize: bool,
+    show_bottom_resize: bool,
+    is_visible: bool,
+}
+
+struct DockingCalculatedContentArea {
+    x: f64,
+    y: f64,
+    width: f64,
+    height: f64,
+}
+
+struct DockingWindowConfig {
+    id: u64,
+    min_width: Option&lt;f64&gt;,
+    min_height: Option&lt;f64&gt;,
+    max_width: Option&lt;f64&gt;,
+    max_height: Option&lt;f64&gt;,
+    width: f64,
+    height: DockingWindowHeight,
+    resize: DockingResize,
+    side: DockingSide,
+    is_max_sized: bool,
+    is_float: bool,
+    is_master: bool,
+    auto_resize: bool,
+    size_snap_x: Option&lt;f64&gt;,
+    size_snap_y: Option&lt;f64&gt;,
+    size_padding_left: f64,
+    size_padding_right: f64,
+    size_padding_top: f64,
+    size_padding_bottom: f64,
+    is_visible: bool,
+    resize_vertically_on_drag: bool,
+}
+
+enum DockingResize {
+    None,
+    Horizontal,
+    Vertical,
+    Side,
+    Free,
+}
+
+enum DockingSide {
+    Left,
+    Top,
+    Right,
+    Bottom,
+}
+
+enum DockingWindowHeight {
+    Value {
+        size: f64,
+    },
+    Wrap,
+}
+
+enum DockingWindowCalculatedHeight {
+    Value {
+        size: f64,
+    },
+    Wrap {
+        size: f64,
+    },
+}
+
+struct DockingPlaceholder {
+    placeholder_id: u64,
+    window_id: u64,
+    x: f64,
+    y: f64,
+    width: f64,
+    height: f64,
+    min_width: Option&lt;f64&gt;,
+    min_height: Option&lt;f64&gt;,
+    is_max_sized: bool,
+    edge: PlaceholderEdge,
+    side: DockingSide,
+}
+
+enum PlaceholderEdge {
+    Left,
+    Right,
+    Top,
+    Bottom,
+}
+
+enum DockingDragMode {
+    None,
+    Move,
+    LeftResize,
+    RightResize,
+    TopResize,
+    BottomResize,
+}
+
+enum DockingSides {
+    Vertical,
+    Horizontal,
+    Free,
+}
+
+struct DockingViewPaddings {
+    paddings: EdgeInsets,
+    animated: bool,
+}
+
+trait DockingRpc {
+    signal placeholder -&gt; Option&lt;DockingPlaceholder&gt;;
+
+    signal swap_window_id -&gt; Option&lt;u64&gt;;
+
+    signal update_calculated_areas -&gt; Vec&lt;DockingCalculatedArea&gt;;
+
+    fn init_config(
+        sides: DockingSides,
+        config: Vec&lt;DockingWindowConfig&gt;
+    ) -&gt; Vec&lt;DockingWindowConfig&gt;;
+
+    fn set_parent_view_area_size(width: f64, height: f64);
+
+    fn set_window_wrap_height(id: u64, height: f64);
+
+    fn calculate_areas() -&gt; Vec&lt;DockingCalculatedArea&gt;;
+
+    fn get_content_area() -&gt; DockingCalculatedContentArea;
+
+    fn set_config(config: Vec&lt;DockingWindowConfig&gt;);
+
+    fn is_window_wrap_sized(id: u64) -&gt; bool;
+
+    fn on_drag_resize_start(
+        id: u64,
+        x: f64,
+        y: f64,
+        dragMode: DockingDragMode,
+    );
+
+    fn on_drag_move_start(
+        id: u64,
+        x: f64,
+        y: f64,
+        relative_x: f64,
+        relative_y: f64,
+    );
+
+    fn on_drag_start(
+        id: u64,
+        x: f64,
+        y: f64,
+        relative_x: f64,
+        relative_y: f64,
+    ) -&gt; DockingDragMode;
+
+    fn on_drag_update(x: f64, y: f64);
+
+    fn on_drag_end();
+
+    fn set_visibility(id: u64, is_visible: bool);
+}</code></pre>
+        </details>
+
+        <div class="thread">
+            <article class="post">
+                <time datetime="2024-05-08">May 8, 2024</time>
+                <p>Panels can be dragged, docked and stacked freely.</p>
+                <video class="video" src="media/docking-overview.mp4" poster="media/docking-overview.webp" muted loop playsinline preload="metadata"></video>
+            </article>
+
+            <article class="post">
+                <time datetime="2024-05-08">May 8, 2024</time>
+                <p>Panels resize by dragging their edges, with optional grid snapping.</p>
+                <video class="video" src="media/docking-resize.mp4" poster="media/docking-resize.webp" muted loop playsinline preload="metadata"></video>
+            </article>
+
+            <article class="post">
+                <time datetime="2024-05-11">May 11, 2024</time>
+                <p>Any panel can be hidden and shown again, and the layout stays intact.</p>
+                <video class="video" src="media/docking-toggle.mp4" poster="media/docking-toggle.webp" muted loop playsinline preload="metadata"></video>
+            </article>
+
+            <article class="post">
+                <time datetime="2024-05-12">May 12, 2024</time>
+                <p>Splits work too: here a full-height dock sits next to the main content area.</p>
+                <video class="video" src="media/docking-split.mp4" poster="media/docking-split.webp" muted loop playsinline preload="metadata"></video>
+            </article>
+        </div>
+
+        <footer>
+            <a href="mailto:sys.int64@gmail.com">sys.int64@gmail.com</a>
+        </footer>
+    </main>
+
+    <script src="assets/autoplay.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.2/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.2/languages/rust.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
