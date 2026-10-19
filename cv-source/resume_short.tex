@@ -90,14 +90,25 @@
 %--------------------------------------------------------------
 \section{Work Experience}
 
-\resumeHeading{J-Novel Club}{Mobile Application Developer (Lead)}{USA (Remote)}{Oct 2024 - Present}
+\resumeHeading{M12-Media (former name: J-Novel Club)}{Mobile Application Developer (Lead)}{USA (Remote)}{Oct 2024 - Present}
 \begin{bullets}
-\item Implement comic reader engine;
-\item Set up CI/CD to validate codebase and distribute iOS and Android applications to testers;
-\item Implement task orchestrator abstraction that helps schedule tasks that should be retried after failure and transactional persistent task e.g. to make sure payment successfully sent to the backend even if the app shutdown.
-\item Implement audiobook player which supports playback while app is open or in the background with native OS playback integration on lockscreen and casting to other devices.
+\item Lead mobile developer of the \href{https://bookwalker.com/}{\underline{BookWalker}} platform; designed and built nearly the entire iOS and Android codebase, including the app and four reusable packages;
+\item Designed the reader engines and shared core as reusable, UI-agnostic packages (Reader Development Kit) that let other products integrate them with a fully custom UI;
+\item Built a comic/manga reader engine from scratch with single-page, two-page spread and vertical scroll (webtoon) modes, zoom and pan, position synchronization across view modes and orientations (also used to open a comic at an exact location), and DRM image decryption through native FFI code running in an isolate pool;
+\item Built an EPUB light novel reader by integrating the native Readium toolkits (Swift/Kotlin) into Flutter over platform channels and Protobuf, with LCP DRM and customizable typography and layout;
+\item Built a DRM-protected audiobook player with background playback, lock screen and system media controls, and casting to external devices;
+\item Implemented offline mode: users download their purchases through resumable background tasks and read or listen fully offline, while reading progress is queued and synced once the connection is back;
+\item Designed a persistent task orchestrator with retry and backoff strategies, preconditions and collision policies, guaranteeing that critical operations such as payments complete even if the app is killed;
+\item Brought a testing culture to the mobile team and built the testing architecture and infrastructure: unit, widget and golden tests across the app and packages, run in CI;
+\item Implemented a server-driven home screen that renders dynamic layouts (slideshows, tabbed collections, etc.) from backend configuration;
+\item Implemented dynamic multi-factor authentication where the backend defines the verification stages, plus SSO and passkeys;
+\item Implemented the purchase flow, gifting of comics, novels and audiobooks to friends, and the analytics pipeline with impression tracking and reliable event delivery;
+\item Delivered accessibility features: font scaling, light/dark and high-contrast themes, reduced motion and full keyboard navigation;
+\item Set up CI/CD that runs static analysis and unit, widget and golden tests, distributes signed iOS and Android builds to testers via Firebase App Distribution, and produces production releases.
 \end{bullets}
 \sectionsep
+
+\clearpage
 
 \resumeHeading{Comikey Media Inc.}{Mobile Application Developer (Lead)}{USA (Remote)}{Jan 2023 - Apr 2024}
 \begin{bullets}
@@ -116,8 +127,6 @@
 \item Set up CI/CD to validate codebase and deploy iOS and Android applications.
 \end{bullets}
 \sectionsep
-
-\clearpage
 
 \resumeHeading{Finblox}{Mobile Application Developer}{Singapore (Remote)}{May 2022 – Dec 2022}
 \begin{bullets}
