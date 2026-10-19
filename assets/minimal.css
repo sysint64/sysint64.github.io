@@ -157,16 +157,18 @@ ul {
     gap: 24px;
 }
 
-.teaser p { flex: 1; margin: 0; }
+.teaser-text { flex: 1; }
 
-.teaser .video {
+.teaser-text p:last-child { margin-bottom: 0; }
+
+.teaser .clip {
     flex: 0 0 140px;
     width: 140px;
 }
 
 @media (max-width: 520px) {
     .teaser { flex-direction: column; gap: 16px; }
-    .teaser .video { width: 160px; flex-basis: auto; }
+    .teaser .clip { width: 160px; flex-basis: auto; }
 }
 
 .thread {
